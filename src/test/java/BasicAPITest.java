@@ -17,12 +17,9 @@ public class BasicAPITest {
         //Basic Restful GET method, verify that statusCode is 200 OK
         RestAssured.given().
         when().
-                log().all().
                 get("/users/2/").
         then().
-                log().all().
-                statusCode(200).
-                body("id", equalTo(2));
+                statusCode(200);
 
     }
 
@@ -32,11 +29,8 @@ public class BasicAPITest {
         //Basic Restful GET method, verify that id is 2
         RestAssured.given().
         when().
-                log().all().
                 get("/users/2/").
         then().
-                log().all().
-                statusCode(200).
                 body("id", equalTo(2));
 
     }
