@@ -21,7 +21,23 @@ public class BasicAPITest {
                 get("/users/2/").
         then().
                 log().all().
-                statusCode(200);
+                statusCode(200).
+                body("id", equalTo(2));
+
+    }
+
+    @Test
+    public void testIntegerValue() {
+
+        //Basic Restful GET method, verify that id is 2
+        RestAssured.given().
+        when().
+                log().all().
+                get("/users/2/").
+        then().
+                log().all().
+                statusCode(200).
+                body("id", equalTo(2));
 
     }
 }
